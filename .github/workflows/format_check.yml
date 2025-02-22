@@ -1,0 +1,14 @@
+# .github/workflows/format_check.yml
+name: Format Check
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  check_format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run formatter (e.g., black for Python)
+        run: black . --check  # Or your formatting command
